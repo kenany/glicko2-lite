@@ -1,0 +1,35 @@
+{
+  "name": "glicko2-lite",
+  "version": "0.0.0",
+  "description": "Barebones Glicko-2 implementation",
+  "keywords": [
+    "statistics"
+  ],
+  "repository": "KenanY/glicko2-lite",
+  "license": "MIT",
+  "author": "Kenan Yildirim <kenan@kenany.me> (http://kenany.me/)",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "LICENSE.txt"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/index.js"
+  },
+  "dependencies": {
+    "lodash.assign": "^4.0.4",
+    "lodash.map": "^4.2.0",
+    "lodash.reduce": "^4.2.0"
+  },
+  "devDependencies": {
+    "almost-equal": "^1.0.0",
+    "beautify-benchmark": "^0.2.4",
+    "benchmark": "^2.1.0",
+    "glicko2": "^0.8.4",
+    "lodash.isfunction": "^3.0.8",
+    "tape": "^4.4.0"
+  }
+}
