@@ -17,7 +17,9 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tape test/index.js"
+    "pretest": "npm run -s lint",
+    "test": "tape test/index.js",
+    "lint": "eslint index.js test/index.js"
   },
   "dependencies": {
     "lodash.assign": "^4.0.4",
@@ -25,9 +27,11 @@
     "lodash.reduce": "^4.2.0"
   },
   "devDependencies": {
+    "@kenan/eslint-config": "^1.0.1",
     "almost-equal": "^1.0.0",
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.0",
+    "eslint": "^2.11.1",
     "glicko2": "^0.8.4",
     "lodash.isfunction": "^3.0.8",
     "tape": "^4.4.0"
