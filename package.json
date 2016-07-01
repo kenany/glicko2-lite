@@ -31,7 +31,7 @@
     "almost-equal": "^1.0.0",
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.0",
-    "eslint": "^2.11.1",
+    "eslint": "^3.0.0",
     "glicko2": "^0.8.4",
     "lodash.isfunction": "^3.0.8",
     "tape": "^4.4.0"
