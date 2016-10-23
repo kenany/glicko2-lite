@@ -52,6 +52,7 @@ suite.on('cycle', (event) => {
 });
 
 suite.on('start', (event) => {
+  /* eslint no-console: 0 */
   console.log('Starting...');
 });
 

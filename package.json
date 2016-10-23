@@ -19,7 +19,7 @@
   "scripts": {
     "pretest": "npm run -s lint",
     "test": "tape test/index.js",
-    "lint": "eslint index.js test/index.js"
+    "lint": "eslint index.js test/index.js bench/index.js"
   },
   "dependencies": {
     "lodash.assign": "^4.0.4",
