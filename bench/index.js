@@ -1,11 +1,12 @@
 'use strict';
 
 const Benchmark = require('benchmark');
-const suite = new Benchmark.Suite();
 const benchmarks = require('beautify-benchmark');
 
 const lite = require('../');
 const glicko2 = require('glicko2');
+
+const suite = new Benchmark.Suite();
 
 suite.add('glicko2-lite', () => {
   const players = [];
