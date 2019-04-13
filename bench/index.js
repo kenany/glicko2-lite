@@ -13,7 +13,7 @@ suite.add('glicko2-lite', () => {
 
   let i = 0;
   while (i++ < 1000) {
-    players.push({rating: 1500, rd: 350, vol: 0.06});
+    players.push({ rating: 1500, rd: 350, vol: 0.06 });
   }
 
   for (let i = 1; i < players.length; i++) {
@@ -22,14 +22,14 @@ suite.add('glicko2-lite', () => {
     players[0] = lite(p1.rating, p1.rd, p1.vol,
       [p2.rating, p2.rd, Math.floor(Math.random() * 3) / 2]);
     players[i] = lite(p2.rating, p2.rd, p2.vol,
-      [p1.rating, p1.rd, Math.floor(Math.random() * 3) / 2], {tau: 0.5});
+      [p1.rating, p1.rd, Math.floor(Math.random() * 3) / 2], { tau: 0.5 });
   }
 
   return players[0];
 });
 
 suite.add('glicko2', () => {
-  const glicko = new glicko2.Glicko2({tau: 0.5});
+  const glicko = new glicko2.Glicko2({ tau: 0.5 });
 
   const players = [];
 
@@ -45,7 +45,7 @@ suite.add('glicko2', () => {
     glicko.updateRatings([[p1, p2, Math.floor(Math.random() * 3) / 2]]);
   }
 
-  return {rating: p1.getRating(), rd: p1.getRd(), vol: p1.getVol()};
+  return { rating: p1.getRating(), rd: p1.getRd(), vol: p1.getVol() };
 });
 
 suite.on('cycle', (event) => {
@@ -61,4 +61,4 @@ suite.on('complete', () => {
   benchmarks.log();
 });
 
-suite.run({async: false});
+suite.run({ async: false });

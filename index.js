@@ -7,7 +7,7 @@ var reduce = require('lodash.reduce');
 function scale(rating, rd, options) {
   var mu = (rating - options.rating) / 173.7178;
   var phi = rd / 173.7178;
-  return {mu: mu, phi: phi};
+  return { mu: mu, phi: phi };
 }
 
 function g(phi) {
@@ -107,17 +107,17 @@ function newRating(phis, mu, v, opponents) {
   var mup = mu + Math.pow(phip, 2) * reduce(opponents, function(sum, opp) {
     return sum + opp.gphij * (opp.score - opp.emmp);
   }, 0);
-  return {mu: mup, phi: phip};
+  return { mu: mup, phi: phip };
 }
 
 function unscale(mup, phip, options) {
   var rating = 173.7178 * mup + options.rating;
   var rd = 173.7178 * phip;
-  return {rating: rating, rd: rd};
+  return { rating: rating, rd: rd };
 }
 
 function rate(rating, rd, sigma, opponents, options) {
-  options = assign({}, {rating: 1500, tau: 0.5}, options || {});
+  options = assign({}, { rating: 1500, tau: 0.5 }, options || {});
 
   // Step 2
   var scaled = scale(rating, rd, options);
