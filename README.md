@@ -1,5 +1,7 @@
 # glicko2-lite
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/KenanY/glicko2-lite.svg)](https://greenkeeper.io/)
+
 [![Build Status][travis-svg]][travis]
 
 An implementation of the Glicko-2 rating algorithm written from scratch, with
