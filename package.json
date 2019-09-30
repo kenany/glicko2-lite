@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@kenan/eslint-config": "^6.0.0",
+    "@kenan/renovate-config": "1.1.1",
     "almost-equal": "^1.0.0",
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.0",
