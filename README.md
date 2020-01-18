@@ -1,7 +1,5 @@
 # glicko2-lite
 
-[![Build Status][travis-svg]][travis]
-
 An implementation of the Glicko-2 rating algorithm written from scratch, with
 the goal being to provide less conveniences than [`glicko2js`][1] in favor of
 faster execution time.
@@ -69,7 +67,3 @@ var glicko2 = require('glicko2-lite');
   - `vol` (_Number_)
   - `matches` (_Array_)
   - `options` (_Object_)
-
-
-   [travis]: https://travis-ci.org/KenanY/glicko2-lite
-   [travis-svg]: https://img.shields.io/travis/KenanY/glicko2-lite.svg
