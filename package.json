@@ -22,7 +22,7 @@
     "lint": "eslint index.js test/index.js bench/index.js"
   },
   "dependencies": {
-    "lodash.assign": "^4.0.4",
+    "lodash.assign": "^4.2.0",
     "lodash.map": "^4.2.0",
     "lodash.reduce": "^4.2.0"
   },
