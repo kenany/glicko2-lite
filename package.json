@@ -27,7 +27,7 @@
     "lodash.reduce": "^4.6.0"
   },
   "devDependencies": {
-    "@kenan/eslint-config": "^8.0.0",
+    "@kenan/eslint-config": "^8.0.4",
     "@kenan/renovate-config": "^1.4.0",
     "almost-equal": "1.1.0",
     "beautify-benchmark": "0.2.4",
