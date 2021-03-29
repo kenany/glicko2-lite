@@ -33,7 +33,7 @@
     "beautify-benchmark": "0.2.4",
     "benchmark": "2.1.4",
     "eslint": "^7.23.0",
-    "glicko2": "0.8.4",
+    "glicko2": "0.8.6",
     "lodash.isfunction": "3.0.9",
     "tape": "5.2.2"
   }
