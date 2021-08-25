@@ -35,6 +35,6 @@
     "eslint": "^7.32.0",
     "glicko2": "0.8.6",
     "lodash.isfunction": "3.0.9",
-    "tape": "5.2.2"
+    "tape": "5.3.1"
   }
 }
