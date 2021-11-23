@@ -44,6 +44,6 @@
     "glicko2": "^0.8.6",
     "lodash.isfunction": "^3.0.9",
     "semantic-release": "^18.0.0",
-    "tape": "^5.3.1"
+    "tape": "^5.3.2"
   }
 }
