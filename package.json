@@ -7,8 +7,11 @@
   ],
   "repository": "KenanY/glicko2-lite",
   "license": "MIT",
-  "author": "Kenan Yildirim <kenan@kenany.me> (http://kenany.me/)",
+  "author": "Kenan Yildirim <kenan@kenany.me> (https://kenany.me/)",
   "main": "index.js",
+  "engines": {
+    "node": "10 || 12 || 14 || >=16"
+  },
   "files": [
     "index.js",
     "LICENSE.txt"
@@ -17,6 +20,7 @@
     "test": "test"
   },
   "scripts": {
+    "release": "semantic-release",
     "pretest": "npm run -s lint",
     "test": "tape test/index.js",
     "lint": "eslint index.js test/index.js bench/index.js"
@@ -29,12 +33,16 @@
   "devDependencies": {
     "@kenan/eslint-config": "^9.0.4",
     "@kenan/renovate-config": "^1.5.1",
-    "almost-equal": "1.1.0",
-    "beautify-benchmark": "0.2.4",
-    "benchmark": "2.1.4",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "almost-equal": "^1.1.0",
+    "beautify-benchmark": "^0.2.4",
+    "benchmark": "^2.1.4",
+    "conventional-changelog-conventionalcommits": "^4.6.1",
     "eslint": "^7.32.0",
-    "glicko2": "0.8.6",
-    "lodash.isfunction": "3.0.9",
-    "tape": "5.3.1"
+    "glicko2": "^0.8.6",
+    "lodash.isfunction": "^3.0.9",
+    "semantic-release": "^18.0.0",
+    "tape": "^5.3.1"
   }
 }
