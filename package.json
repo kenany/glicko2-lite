@@ -1,6 +1,6 @@
 {
   "name": "glicko2-lite",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Barebones Glicko-2 implementation",
   "keywords": [
     "statistics"
