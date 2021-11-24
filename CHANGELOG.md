@@ -1,3 +1,10 @@
+### [2.0.1](https://github.com/KenanY/glicko2-lite/compare/2.0.0...2.0.1) (2021-11-24)
+
+
+### Bug Fixes
+
+* add type coverage through JSDoc ([1da099b](https://github.com/KenanY/glicko2-lite/commit/1da099b1f530f4f1f8e4bc77afaf154296d45ee5))
+
 ## [2.0.0](https://github.com/KenanY/glicko2-lite/compare/1.0.2...2.0.0) (2021-11-23)
 
 
