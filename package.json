@@ -50,7 +50,7 @@
     "benchmark": "^2.1.4",
     "conventional-changelog-conventionalcommits": "^4.6.3",
     "eslint": "^7.32.0",
-    "glicko2": "^0.8.6",
+    "glicko2": "^0.8.7",
     "lodash.isfunction": "^3.0.9",
     "semantic-release": "^19.0.2",
     "tape": "^5.5.2",
