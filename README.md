@@ -24,8 +24,8 @@ $ node bench/index.js
 Starting...
   2 tests completed.
 
-  glicko2-lite x   102 ops/sec ±2.35% (69 runs sampled)
-  glicko2js    x 11.53 ops/sec ±6.97% (32 runs sampled)
+  glicko2-lite x   433 ops/sec ±0.42% (87 runs sampled)
+  glicko2      x 33.84 ops/sec ±1.40% (59 runs sampled)
 ```
 
    [1]: https://github.com/mmai/glicko2js
@@ -33,7 +33,7 @@ Starting...
 ## Example
 
 ``` javascript
-var glicko2 = require('glicko2-lite');
+const glicko2 = require('glicko2-lite');
 
 // player A: 1500 rating, 350 rating deviation, and 0.06 volatility
 // player B: 2000 rating, 70 rating deviation
@@ -45,7 +45,6 @@ glicko2(1500, 350, 0.06, [[2000, 70, 0]])
 // =>   rd: 318.6617548537152,
 // =>   vol: 0.059999457650202655
 // => }
-
 ```
 
 ## Installation
@@ -57,7 +56,7 @@ $ npm install glicko2-lite
 ## API
 
 ``` javascript
-var glicko2 = require('glicko2-lite');
+const glicko2 = require('glicko2-lite');
 ```
 
 ### `glicko2(rating, rd, vol, matches, [options])`
