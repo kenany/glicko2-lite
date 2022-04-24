@@ -43,7 +43,7 @@
     "@types/lodash.assign": "^4.2.7",
     "@types/lodash.isfunction": "^3.0.7",
     "@types/lodash.map": "^4.6.13",
-    "@types/lodash.reduce": "^4.6.6",
+    "@types/lodash.reduce": "^4.6.7",
     "@types/tape": "^4.13.2",
     "almost-equal": "^1.1.0",
     "beautify-benchmark": "^0.2.4",
