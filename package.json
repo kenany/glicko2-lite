@@ -9,6 +9,7 @@
   "license": "MIT",
   "author": "Kenan Yildirim <kenan@kenany.me> (https://kenany.me/)",
   "main": "index.js",
+  "type": "index.d.ts",
   "engines": {
     "node": "14 || 16 || >=18"
   },
