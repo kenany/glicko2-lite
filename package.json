@@ -48,7 +48,7 @@
     "almost-equal": "^1.1.0",
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",
-    "conventional-changelog-conventionalcommits": "^4.6.3",
+    "conventional-changelog-conventionalcommits": "^5.0.0",
     "eslint": "^7.32.0",
     "glicko2": "^0.8.7",
     "lodash.isfunction": "^3.0.9",
