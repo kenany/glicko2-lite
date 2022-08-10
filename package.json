@@ -54,7 +54,7 @@
     "lodash.isfunction": "^3.0.9",
     "semantic-release": "^19.0.3",
     "tape": "^5.5.3",
-    "type-coverage": "^2.21.1",
+    "type-coverage": "^2.22.0",
     "typescript": "^4.7.4"
   }
 }
