@@ -1,3 +1,14 @@
+## [3.0.0](https://github.com/KenanY/glicko2-lite/compare/2.0.1...3.0.0) (2022-11-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v12 is no longer supported.
+
+### Features
+
+* drop Node.js v12 support ([f2c2395](https://github.com/KenanY/glicko2-lite/commit/f2c23958288569e1712fd23494412eef3083afc8))
+
 ### [2.0.1](https://github.com/KenanY/glicko2-lite/compare/2.0.0...2.0.1) (2021-11-24)
 
 
