@@ -1,6 +1,3 @@
 {
-  "extends": "@kenan",
-  "rules": {
-    "no-var": 0
-  }
+  "extends": "@kenan"
 }

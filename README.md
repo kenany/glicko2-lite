@@ -18,14 +18,14 @@ player play a match against each of the other 999 players. After each individual
 match, I calculate the new ratings of the first player and his opponent. The
 result:
 
-``` sh
+``` bash
 $ node bench/index.js
 
 Starting...
   2 tests completed.
 
-  glicko2-lite x   433 ops/sec ±0.42% (87 runs sampled)
-  glicko2      x 33.84 ops/sec ±1.40% (59 runs sampled)
+  glicko2-lite x   677 ops/sec ±0.48% (89 runs sampled)
+  glicko2      x 33.62 ops/sec ±1.19% (59 runs sampled)
 ```
 
    [1]: https://github.com/mmai/glicko2js

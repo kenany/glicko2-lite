@@ -1,9 +1,5 @@
 'use strict';
 
-var assign = require('lodash.assign');
-var map = require('lodash.map');
-var reduce = require('lodash.reduce');
-
 /** @typedef {[rating: number, rd: number, vol: number]} Opponent */
 
 /**
@@ -21,9 +17,9 @@ var reduce = require('lodash.reduce');
  * @param {{ rating: number; }} options
  */
 function scale(rating, rd, options) {
-  var mu = (rating - options.rating) / 173.7178;
-  var phi = rd / 173.7178;
-  return { mu: mu, phi: phi };
+  const mu = (rating - options.rating) / 173.7178;
+  const phi = rd / 173.7178;
+  return { mu, phi };
 }
 
 /**
@@ -51,8 +47,8 @@ function e(mu, muj, phij) {
  * @returns {ScaledOpponent[]}
  */
 function scaleOpponents(mu, opponents, options) {
-  return map(opponents, function(opp) {
-    var scaled = scale(opp[0], opp[1], options);
+  return opponents.map((opp) => {
+    const scaled = scale(opp[0], opp[1], options);
     return {
       muj: scaled.mu,
       phij: scaled.phi,
@@ -68,9 +64,10 @@ function scaleOpponents(mu, opponents, options) {
  * @returns {number}
  */
 function updateRating(opponents) {
-  return 1 / reduce(opponents, function(sum, opp) {
-    return sum + Math.pow(opp.gphij, 2) * opp.emmp * (1 - opp.emmp);
-  }, 0);
+  return 1 / opponents.reduce(
+    (sum, opp) => sum + Math.pow(opp.gphij, 2) * opp.emmp * (1 - opp.emmp),
+    0
+  );
 }
 
 /**
@@ -79,9 +76,10 @@ function updateRating(opponents) {
  * @returns {number}
  */
 function computeDelta(v, opponents) {
-  return v * reduce(opponents, function(sum, opp) {
-    return sum + opp.gphij * (opp.score - opp.emmp);
-  }, 0);
+  return v * opponents.reduce(
+    (sum, opp) => sum + opp.gphij * (opp.score - opp.emmp),
+    0
+  );
 }
 
 /**
@@ -92,17 +90,17 @@ function computeDelta(v, opponents) {
  * @param {{ tau: number; }} options
  */
 function volF(phi, v, delta, a, options) {
-  var phi2 = Math.pow(phi, 2);
-  var d2 = Math.pow(delta, 2);
+  const phi2 = Math.pow(phi, 2);
+  const d2 = Math.pow(delta, 2);
 
   /**
    * @param {number} x
    */
   return function(x) {
-    var ex = Math.exp(x);
-    var a2 = phi2 + v + ex;
-    var p2 = (x - a) / Math.pow(options.tau, 2);
-    var p1 = (ex * (d2 - phi2 - v - ex)) / (2 * Math.pow(a2, 2));
+    const ex = Math.exp(x);
+    const a2 = phi2 + v + ex;
+    const p2 = (x - a) / Math.pow(options.tau, 2);
+    const p1 = (ex * (d2 - phi2 - v - ex)) / (2 * Math.pow(a2, 2));
     return p1 - p2;
   };
 }
@@ -117,17 +115,17 @@ function volF(phi, v, delta, a, options) {
  */
 function computeVolatility(sigma, phi, v, delta, options) {
   // 5.1
-  var a = Math.log(Math.pow(sigma, 2));
-  var f = volF(phi, v, delta, a, options);
+  let a = Math.log(Math.pow(sigma, 2));
+  const f = volF(phi, v, delta, a, options);
 
   // 5.2
   /** @type {number} */
-  var b;
+  let b;
   if (Math.pow(delta, 2) > Math.pow(phi, 2) + v) {
     b = Math.log(Math.pow(delta, 2) - Math.pow(phi, 2) - v);
   }
   else {
-    var k = 1;
+    let k = 1;
     while (f(a - k * options.tau) < 0) {
       k++;
     }
@@ -135,14 +133,14 @@ function computeVolatility(sigma, phi, v, delta, options) {
   }
 
   // 5.3
-  var fa = f(a);
-  var fb = f(b);
+  let fa = f(a);
+  let fb = f(b);
 
   // 5.4
   while (Math.abs(b - a) > 0.000001) {
     /** @type {number} */
-    var c = a + (a - b) * fa / (fb - fa);
-    var fc = f(c);
+    const c = a + (a - b) * fa / (fb - fa);
+    const fc = f(c);
 
     if (fc * fb < 0) {
       a = b;
@@ -176,10 +174,11 @@ function phiStar(sigmap, phi) {
  * @param {readonly ScaledOpponent[]} opponents
  */
 function newRating(phis, mu, v, opponents) {
-  var phip = 1 / Math.sqrt(1 / Math.pow(phis, 2) + 1 / v);
-  var mup = mu + Math.pow(phip, 2) * reduce(opponents, function(sum, opp) {
-    return sum + opp.gphij * (opp.score - opp.emmp);
-  }, 0);
+  const phip = 1 / Math.sqrt(1 / Math.pow(phis, 2) + 1 / v);
+  const mup = mu + Math.pow(phip, 2) * opponents.reduce(
+    (sum, opp) => sum + opp.gphij * (opp.score - opp.emmp),
+    0
+  );
   return { mu: mup, phi: phip };
 }
 
@@ -189,9 +188,9 @@ function newRating(phis, mu, v, opponents) {
  * @param {{ rating: number; }} options
  */
 function unscale(mup, phip, options) {
-  var rating = 173.7178 * mup + options.rating;
-  var rd = 173.7178 * phip;
-  return { rating: rating, rd: rd };
+  const rating = 173.7178 * mup + options.rating;
+  const rd = 173.7178 * phip;
+  return { rating, rd };
 }
 
 /**
@@ -204,28 +203,32 @@ function unscale(mup, phip, options) {
  */
 function rate(rating, rd, sigma, opponents, options) {
   /** @type {{ rating: number; tau: number; }} */
-  var opts = assign({}, { rating: 1500, tau: 0.5 }, options || {});
+  const opts = Object.assign({}, { rating: 1500, tau: 0.5 }, options || {});
 
   // Step 2
-  var scaled = scale(rating, rd, opts);
-  var scaledOpponents = scaleOpponents(scaled.mu, opponents, opts);
+  const scaled = scale(rating, rd, opts);
+  const scaledOpponents = scaleOpponents(scaled.mu, opponents, opts);
 
   // Step 3
-  var v = updateRating(scaledOpponents);
+  const v = updateRating(scaledOpponents);
 
   // Step 4
-  var delta = computeDelta(v, scaledOpponents);
+  const delta = computeDelta(v, scaledOpponents);
 
   // Step 5
-  var sigmap = computeVolatility(sigma, scaled.phi, v, delta, opts);
+  const sigmap = computeVolatility(sigma, scaled.phi, v, delta, opts);
 
   // Step 6
-  var phis = phiStar(sigmap, scaled.phi);
+  const phis = phiStar(sigmap, scaled.phi);
 
   // Step 7
-  var updated = newRating(phis, scaled.mu, v, scaledOpponents);
+  const updated = newRating(phis, scaled.mu, v, scaledOpponents);
 
-  return assign({}, unscale(updated.mu, updated.phi, opts), { vol: sigmap });
+  return Object.assign(
+    {},
+    unscale(updated.mu, updated.phi, opts),
+    { vol: sigmap }
+  );
 }
 
 module.exports = rate;

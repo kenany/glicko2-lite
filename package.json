@@ -10,7 +10,7 @@
   "author": "Kenan Yildirim <kenan@kenany.me> (https://kenany.me/)",
   "main": "index.js",
   "engines": {
-    "node": "12 || 14 || 16 || >=18"
+    "node": "14 || 16 || >=18"
   },
   "files": [
     "CHANGELOG.md",
@@ -29,27 +29,20 @@
     "posttest": "npm run -s lint",
     "lint": "eslint index.js test/index.js bench/index.js"
   },
-  "dependencies": {
-    "lodash.assign": "^4.2.0",
-    "lodash.map": "^4.6.0",
-    "lodash.reduce": "^4.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@kenan/eslint-config": "^9.0.4",
+    "@kenan/eslint-config": "^10.0.1",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
-    "@tsconfig/node12": "^1.0.11",
+    "@tsconfig/node14": "^1.0.3",
     "@types/almost-equal": "^1.1.0",
-    "@types/lodash.assign": "^4.2.7",
     "@types/lodash.isfunction": "^3.0.7",
-    "@types/lodash.map": "^4.6.13",
-    "@types/lodash.reduce": "^4.6.7",
     "@types/tape": "^4.13.2",
     "almost-equal": "^1.1.0",
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",
     "conventional-changelog-conventionalcommits": "^5.0.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.27.0",
     "glicko2": "^1.0.0",
     "lodash.isfunction": "^3.0.9",
     "semantic-release": "^19.0.5",

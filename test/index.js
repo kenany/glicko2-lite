@@ -1,23 +1,23 @@
 'use strict';
 
-var test = require('tape');
-var isFunction = require('lodash.isfunction');
-var almostEqual = require('almost-equal');
+const test = require('tape');
+const isFunction = require('lodash.isfunction');
+const almostEqual = require('almost-equal');
 
-var glicko2 = require('../');
+const glicko2 = require('../');
 
-test('exports a function', function(t) {
+test('exports a function', (t) => {
   t.plan(1);
   t.ok(isFunction(glicko2));
 });
 
-test('calculates new ratings', function(t) {
+test('calculates new ratings', (t) => {
   t.plan(3);
 
-  var a = { rating: 1500, rd: 200, vol: 0.06 };
-  var b = { rating: 1400, rd: 30, vol: 0.06 };
-  var c = { rating: 1550, rd: 100, vol: 0.06 };
-  var d = { rating: 1700, rd: 300, vol: 0.06 };
+  let a = { rating: 1500, rd: 200, vol: 0.06 };
+  const b = { rating: 1400, rd: 30, vol: 0.06 };
+  const c = { rating: 1550, rd: 100, vol: 0.06 };
+  const d = { rating: 1700, rd: 300, vol: 0.06 };
 
   // a beats b
   // c beats a
