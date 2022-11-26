@@ -42,7 +42,7 @@
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",
     "conventional-changelog-conventionalcommits": "^5.0.0",
-    "eslint": "^8.27.0",
+    "eslint": "^8.28.0",
     "glicko2": "^1.0.0",
     "lodash.isfunction": "^3.0.9",
     "semantic-release": "^19.0.5",
