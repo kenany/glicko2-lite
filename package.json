@@ -37,7 +37,7 @@
     "@tsconfig/node14": "^1.0.3",
     "@types/almost-equal": "^1.1.0",
     "@types/lodash.isfunction": "^3.0.7",
-    "@types/tape": "^4.13.2",
+    "@types/tape": "^4.13.3",
     "almost-equal": "^1.1.0",
     "beautify-benchmark": "^0.2.4",
     "benchmark": "^2.1.4",
