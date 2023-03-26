@@ -194,11 +194,11 @@ function unscale(mup, phip, options) {
 }
 
 /**
- * @param {number} rating
- * @param {number} rd
- * @param {number} sigma
- * @param {readonly Opponent[]} opponents
- * @param {{ rating?: number; tau?: number; }} [options]
+ * @param {number} rating Rating.
+ * @param {number} rd Rating deviation.
+ * @param {number} sigma Rating volatility.
+ * @param {readonly Opponent[]} opponents Opponents.
+ * @param {{ rating?: number; tau?: number; }} [options] Options.
  * @returns {{ rating: number; rd: number; vol: number; }}
  */
 function rate(rating, rd, sigma, opponents, options) {
