@@ -1,6 +1,6 @@
 {
   "name": "glicko2-lite",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Barebones Glicko-2 implementation",
   "keywords": [
     "statistics"
@@ -27,14 +27,11 @@
     "lint": "eslint .",
     "release": "semantic-release",
     "type-coverage": "type-coverage --at-least 100 --detail --strict",
-
     "prebuild": "npm run clean",
     "build": "tsc",
-
     "pretest": "npm run build",
     "test": "tape test/index.js",
     "posttest": "npm run lint && npm run type-coverage",
-
     "prepack": "npm run build"
   },
   "dependencies": {},

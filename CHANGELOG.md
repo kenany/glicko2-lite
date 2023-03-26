@@ -1,3 +1,11 @@
+## [3.1.0](https://github.com/KenanY/glicko2-lite/compare/3.0.0...3.1.0) (2023-03-26)
+
+
+### Features
+
+* add TypeScript declarations ([ef22831](https://github.com/KenanY/glicko2-lite/commit/ef22831edb591d0fce9a9c0bfc67cd2bd875afbf))
+* generate TypeScript declarations from source ([c98b168](https://github.com/KenanY/glicko2-lite/commit/c98b1689065fd7d53414be9fbacc51c6ca71d6d3))
+
 ## [3.0.0](https://github.com/KenanY/glicko2-lite/compare/2.0.1...3.0.0) (2022-11-14)
 
 
