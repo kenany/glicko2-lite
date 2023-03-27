@@ -37,7 +37,7 @@
   "dependencies": {},
   "devDependencies": {
     "@kenan/eslint-config": "^10.0.2",
-    "@semantic-release/changelog": "^6.0.2",
+    "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@tsconfig/node14": "^1.0.3",
     "@types/almost-equal": "^1.1.0",
