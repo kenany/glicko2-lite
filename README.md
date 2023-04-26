@@ -12,20 +12,34 @@ my case at least, I was already saving rating information to a database so I had
 no need for the `Player` classes that `glicko2js` provides; all I really needed
 was the actual calculation of new ratings itself.
 
-`bench/index.js` is a benchmark I wrote to demonstrate the difference in
+`bench/many.js` is a benchmark I wrote to demonstrate the difference in
 execution time. In the benchmark, I create 1,000 players, and have the first
 player play a match against each of the other 999 players. After each individual
 match, I calculate the new ratings of the first player and his opponent. The
 result:
 
 ``` bash
-$ node bench/index.js
+$ node bench/many.js
 
 Starting...
-  2 tests completed.
+  3 tests completed.
 
-  glicko2-lite x   677 ops/sec ±0.48% (89 runs sampled)
-  glicko2      x 33.62 ops/sec ±1.19% (59 runs sampled)
+  glicko2-lite x 1,457 ops/sec ±0.39% (94 runs sampled)
+  glicko2      x 33.92 ops/sec ±1.45% (59 runs sampled)
+  glicko2.ts   x  0.12 ops/sec ±1.52% (5 runs sampled)
+```
+
+`bench/single.js` tests a single match between two players:
+
+``` bash
+$ node bench/many.js
+
+Starting...
+  3 tests completed.
+
+  glicko2-lite x 1,719,122 ops/sec ±0.60% (92 runs sampled)
+  glicko2      x 1,406,286 ops/sec ±0.26% (94 runs sampled)
+  glicko2.ts   x   755,440 ops/sec ±0.16% (100 runs sampled)
 ```
 
    [1]: https://github.com/mmai/glicko2js
