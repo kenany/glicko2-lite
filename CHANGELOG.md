@@ -1,3 +1,10 @@
+## [3.2.0](https://github.com/KenanY/glicko2-lite/compare/3.1.0...3.2.0) (2023-04-26)
+
+
+### Features
+
+* update inequality in step 5.4 ([72d4996](https://github.com/KenanY/glicko2-lite/commit/72d499643f6ec74b335ea2edd145392c1a478759))
+
 ## [3.1.0](https://github.com/KenanY/glicko2-lite/compare/3.0.0...3.1.0) (2023-03-26)
 
 
