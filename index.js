@@ -142,7 +142,7 @@ function computeVolatility(sigma, phi, v, delta, options) {
     const c = a + (a - b) * fa / (fb - fa);
     const fc = f(c);
 
-    if (fc * fb < 0) {
+    if (fc * fb <= 0) {
       a = b;
       fa = fb;
     }
