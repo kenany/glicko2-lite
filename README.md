@@ -12,11 +12,24 @@ my case at least, I was already saving rating information to a database so I had
 no need for the `Player` classes that `glicko2js` provides; all I really needed
 was the actual calculation of new ratings itself.
 
-`bench/many.js` is a benchmark I wrote to demonstrate the difference in
-execution time. In the benchmark, I create 1,000 players, and have the first
-player play a match against each of the other 999 players. After each individual
-match, I calculate the new ratings of the first player and his opponent. The
-result:
+Let's look at some benchmarks. First, the simplest case: create two players,
+play a match between them, and calculate the new rating, deviation, and
+volatility of both players:
+
+``` bash
+$ node bench/single.js
+
+Starting...
+  3 tests completed.
+
+  glicko2-lite x 1,719,122 ops/sec ±0.60% (92 runs sampled)
+  glicko2      x 1,406,286 ops/sec ±0.26% (94 runs sampled)
+  glicko2.ts   x   755,440 ops/sec ±0.16% (100 runs sampled)
+```
+
+Now something larger: let's create 1,000 players, and have the first player play
+a match against each of the other 999 players. After each individual match,
+calculate the new ratings of the first player and their opponent:
 
 ``` bash
 $ node bench/many.js
@@ -29,18 +42,22 @@ Starting...
   glicko2.ts   x  0.12 ops/sec ±1.52% (5 runs sampled)
 ```
 
-`bench/single.js` tests a single match between two players:
+Some might say this is unfair, since new ratings are being calculated piecemeal
+after each match instead of in bulk after a series, or rating period, of
+matches. Let's try the same benchmark but only calculating the new ratings at
+the end of all of the matches:
 
 ``` bash
-$ node bench/many.js
+$ node bench/batch.js
 
 Starting...
   3 tests completed.
 
-  glicko2-lite x 1,719,122 ops/sec ±0.60% (92 runs sampled)
-  glicko2      x 1,406,286 ops/sec ±0.26% (94 runs sampled)
-  glicko2.ts   x   755,440 ops/sec ±0.16% (100 runs sampled)
+  glicko2-lite x 21,306 ops/sec ±1.20% (92 runs sampled)
+  glicko2      x  2,304 ops/sec ±0.78% (91 runs sampled)
+  glicko2.ts   x    105 ops/sec ±0.72% (77 runs sampled)
 ```
+
 
    [1]: https://github.com/mmai/glicko2js
 

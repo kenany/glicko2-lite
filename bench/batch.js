@@ -1,3 +1,5 @@
+// @ts-check
+
 'use strict';
 
 const Benchmark = require('benchmark');
@@ -11,7 +13,7 @@ const suite = new Benchmark.Suite();
 
 // Benchmark:
 //   1. Create 1000 players.
-//   2. Have player 1 play a match versus every other player, one at a time.
+//   2. Have player 1 play a match versus every other player, in a single batch.
 //   3. Get the new rating, deviation, and volatility of player 1.
 
 /* eslint-disable no-console, no-unused-vars */
@@ -19,49 +21,40 @@ const suite = new Benchmark.Suite();
 suite.add('glicko2-lite', () => {
   const players = [];
 
+  /** @type {lite.Opponent[]} */
+  const matches = [];
+
   let i = 0;
   while (i++ < 1000) {
-    players.push({ rating: 1500, rd: 350, vol: 0.06 });
+    const player = { rating: 1500, rd: 350, vol: 0.06 };
+    players.push(player);
+    matches.push([player.rating, player.rd, Math.floor(Math.random() * 3) / 2]);
   }
 
-  for (let i = 1; i < players.length; i++) {
-    const p1 = players[0];
-    const p2 = players[i];
-    players[0] = lite(
-      p1.rating,
-      p1.rd,
-      p1.vol,
-      [[p2.rating, p2.rd, Math.floor(Math.random() * 3) / 2]],
-      { tau: 0.5 }
-    );
-    players[i] = lite(
-      p2.rating,
-      p2.rd,
-      p2.vol,
-      [[p1.rating, p1.rd, Math.floor(Math.random() * 3) / 2]],
-      { tau: 0.5 }
-    );
-  }
-
-  return players[0];
+  return lite(
+    players[0].rating,
+    players[0].rd,
+    players[0].vol,
+    matches,
+    { tau: 0.5 }
+  );
 });
 
 suite.add('glicko2', () => {
   const glicko = new glicko2.Glicko2({ tau: 0.5 });
 
-  const players = [];
+  const p1 = glicko.makePlayer(1500, 350, 0.06);
+  const players = [p1];
+  const matches = [];
 
-  let i = 0;
+  let i = 1;
   while (i++ < 1000) {
-    players.push(glicko.makePlayer(1500, 350, 0.06));
+    const player = glicko.makePlayer(1500, 350, 0.06);
+    players.push(player);
+    matches.push([p1, player, Math.floor(Math.random() * 3) / 2]);
   }
 
-  const p1 = players[0];
-
-  for (let i = 1; i < players.length; i++) {
-    const p2 = players[i];
-    glicko.updateRatings([[p1, p2, Math.floor(Math.random() * 3) / 2]]);
-  }
+  glicko.updateRatings(matches);
 
   return { rating: p1.getRating(), rd: p1.getRd(), vol: p1.getVol() };
 });
@@ -69,19 +62,20 @@ suite.add('glicko2', () => {
 suite.add('glicko2.ts', () => {
   const glicko = new glicko2ts.Glicko2({ tau: 0.5 });
 
-  const players = [];
+  const p1 = glicko.makePlayer(1500, 350, 0.06);
+  const players = [p1];
 
-  let i = 0;
+  /** @type {glicko2ts.playerMatch[]} */
+  const matches = [];
+
+  let i = 1;
   while (i++ < 1000) {
-    players.push(glicko.makePlayer(1500, 350, 0.06));
+    const player = glicko.makePlayer(1500, 350, 0.06);
+    players.push(player);
+    matches.push([p1, player, Math.floor(Math.random() * 3) / 2]);
   }
 
-  const p1 = players[0];
-
-  for (let i = 1; i < players.length; i++) {
-    const p2 = players[i];
-    glicko.updateRatings([[p1, p2, Math.floor(Math.random() * 3) / 2]]);
-  }
+  glicko.updateRatings(matches);
 
   return { rating: p1.getRating(), rd: p1.getRd(), vol: p1.getVol() };
 });
