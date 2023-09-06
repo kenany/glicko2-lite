@@ -1,3 +1,14 @@
+## [4.0.0](https://github.com/kenany/glicko2-lite/compare/3.2.0...4.0.0) (2023-09-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* Node.js v14 and v16 are no longer supported.
+
+### Features
+
+* drop Node.js v14 and v16 ([4b423ea](https://github.com/kenany/glicko2-lite/commit/4b423eaabf1a7ed1ee878059e64145dd4dba3c0f))
+
 ## [3.2.0](https://github.com/KenanY/glicko2-lite/compare/3.1.0...3.2.0) (2023-04-26)
 
 
