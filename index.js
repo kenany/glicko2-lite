@@ -9,7 +9,7 @@
  * @property {number} gphij
  * @property {number} emmp
  * @property {number} score
-*/
+ */
 
 /**
  * @param {number} rating

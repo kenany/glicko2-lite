@@ -16,7 +16,7 @@ const suite = new Benchmark.Suite();
 //   2. Have player 1 play a match versus every other player, in a single batch.
 //   3. Get the new rating, deviation, and volatility of player 1.
 
-/* eslint-disable no-console, no-unused-vars */
+/* eslint-disable no-console */
 
 suite.add('glicko2-lite', () => {
   const players = [];

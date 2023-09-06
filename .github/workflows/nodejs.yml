@@ -5,10 +5,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node-version: [14, 16, 18, 20]
+        node-version: [18, 20]
         os: [ubuntu-latest]
     steps:
-    - uses: actions/checkout@v3.6.0
+    - uses: actions/checkout@v4.0.0
     - name: Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3.8.1
       with:
