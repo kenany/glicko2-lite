@@ -54,7 +54,7 @@
     "rimraf": "^5.0.5",
     "semantic-release": "^22.0.5",
     "tape": "^5.7.0",
-    "type-coverage": "^2.26.3",
+    "type-coverage": "^2.27.0",
     "typescript": "^5.2.2"
   }
 }
