@@ -40,7 +40,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@tsconfig/node18": "^18.2.2",
-    "@types/almost-equal": "^1.1.1",
+    "@types/almost-equal": "^1.1.2",
     "@types/lodash.isfunction": "^3.0.7",
     "@types/tape": "^5.6.3",
     "almost-equal": "^1.1.0",
