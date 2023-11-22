@@ -36,7 +36,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@kenan/eslint-config": "^11.0.2",
+    "@kenan/eslint-config": "^11.1.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@tsconfig/node18": "^18.2.2",
