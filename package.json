@@ -51,7 +51,7 @@
     "glicko2": "^1.1.0",
     "glicko2.ts": "^1.3.2",
     "lodash.isfunction": "^3.0.9",
-    "rimraf": "^5.0.5",
+    "rimraf": "^5.0.7",
     "semantic-release": "^23.0.8",
     "tape": "^5.7.5",
     "type-coverage": "^2.28.2",
