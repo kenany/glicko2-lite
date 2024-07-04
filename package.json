@@ -55,6 +55,6 @@
     "semantic-release": "^24.0.0",
     "tape": "^5.8.1",
     "type-coverage": "^2.29.0",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.3"
   }
 }
