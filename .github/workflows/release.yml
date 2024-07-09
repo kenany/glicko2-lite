@@ -15,7 +15,7 @@ jobs:
       issues: write
       pull-requests: write
     steps:
-      - uses: actions/setup-node@v4.0.2
+      - uses: actions/setup-node@v4.0.3
         with:
           node-version: 20
       - name: Update npm
