@@ -18,7 +18,7 @@ jobs:
         npm install -g npm
         npm --version
     - name: Install dependencies
-      uses: bahmutov/npm-install@v1.11.1
+      uses: bahmutov/npm-install@3e063b974f0d209807684aa23e534b3dde517fd9 # v1.11.2
       with:
         useLockFile: false
     - name: npm ls
