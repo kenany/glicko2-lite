@@ -1,5 +1,3 @@
-'use strict';
-
 const Benchmark = require('benchmark');
 const benchmarks = require('beautify-benchmark');
 const glicko2 = require('glicko2');
@@ -91,6 +89,7 @@ suite.on('cycle', (event) => {
 });
 
 suite.on('start', () => {
+  // biome-ignore lint/suspicious/noConsole: n/a
   console.log('Starting...');
 });
 

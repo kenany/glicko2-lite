@@ -1,5 +1,3 @@
-'use strict';
-
 const test = require('tape');
 const isFunction = require('lodash.isfunction');
 const almostEqual = require('almost-equal');
@@ -22,13 +20,19 @@ test('calculates new ratings', (t) => {
   // a beats b
   // c beats a
   // d beats a
-  a = glicko2(a.rating, a.rd, a.vol, [
-    [b.rating, b.rd, 1],
-    [c.rating, c.rd, 0],
-    [d.rating, d.rd, 0]
-  ], { tau: 0.5 });
+  a = glicko2(
+    a.rating,
+    a.rd,
+    a.vol,
+    [
+      [b.rating, b.rd, 1],
+      [c.rating, c.rd, 0],
+      [d.rating, d.rd, 0],
+    ],
+    { tau: 0.5 }
+  );
 
-  t.ok(almostEqual(a.rating, 1464, 0.1), a.rating + ' ~= 1464');
-  t.ok(almostEqual(a.rd, 151.52, 0.01), a.rd + ' ~= 151.52');
-  t.ok(almostEqual(a.vol, 0.05999, 0.00001), a.vol + ' ~= 0.05999');
+  t.ok(almostEqual(a.rating, 1464, 0.1), `${a.rating} ~= 1464`);
+  t.ok(almostEqual(a.rd, 151.52, 0.01), `${a.rd} ~= 151.52`);
+  t.ok(almostEqual(a.vol, 0.059_99, 0.000_01), `${a.vol} ~= 0.05999`);
 });

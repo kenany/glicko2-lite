@@ -5,13 +5,16 @@
   "keywords": [
     "statistics"
   ],
-  "repository": "github:kenany/glicko2-lite",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenany/glicko2-lite.git"
+  },
   "license": "MIT",
   "author": "Kenan Yildirim <kenan@kenany.me> (https://kenany.me/)",
   "main": "index.js",
   "types": "index.d.ts",
   "engines": {
-    "node": "18 || >=20"
+    "node": "18 || 20 || 22 || >=24"
   },
   "files": [
     "CHANGELOG.md",
@@ -23,20 +26,20 @@
     "test": "test"
   },
   "scripts": {
-    "clean": "rimraf --glob test/**/*.d.ts *.d.ts",
-    "lint": "eslint .",
+    "clean": "rimraf --glob test/**/*.d.ts *.d.ts || exit 0",
+    "lint": "biome check .",
     "release": "semantic-release",
     "type-coverage": "type-coverage --at-least 100 --detail --strict",
-    "prebuild": "npm run clean",
+    "prebuild": "pnpm clean",
     "build": "tsc",
-    "pretest": "npm run build",
+    "pretest": "pnpm build",
     "test": "tape test/index.js",
-    "posttest": "npm run lint && npm run type-coverage",
-    "prepack": "npm run build"
+    "prepack": "pnpm build"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@kenan/eslint-config": "11.1.18",
+    "@biomejs/biome": "2.3.10",
+    "@containerbase/semantic-release-pnpm": "1.3.11",
+    "@kenan/biome-config": "1.0.6",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@tsconfig/node18": "18.2.6",
@@ -47,7 +50,6 @@
     "beautify-benchmark": "0.2.4",
     "benchmark": "2.1.4",
     "conventional-changelog-conventionalcommits": "9.1.0",
-    "eslint": "8.57.1",
     "glicko2": "1.2.1",
     "glicko2.ts": "1.3.2",
     "lodash.isfunction": "3.0.9",

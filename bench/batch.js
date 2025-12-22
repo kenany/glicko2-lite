@@ -1,7 +1,5 @@
 // @ts-check
 
-'use strict';
-
 const Benchmark = require('benchmark');
 const benchmarks = require('beautify-benchmark');
 const glicko2 = require('glicko2');
@@ -31,13 +29,9 @@ suite.add('glicko2-lite', () => {
     matches.push([player.rating, player.rd, Math.floor(Math.random() * 3) / 2]);
   }
 
-  return lite(
-    players[0].rating,
-    players[0].rd,
-    players[0].vol,
-    matches,
-    { tau: 0.5 }
-  );
+  return lite(players[0].rating, players[0].rd, players[0].vol, matches, {
+    tau: 0.5,
+  });
 });
 
 suite.add('glicko2', () => {
@@ -85,6 +79,7 @@ suite.on('cycle', (event) => {
 });
 
 suite.on('start', () => {
+  // biome-ignore lint/suspicious/noConsole: n/a
   console.log('Starting...');
 });
 

@@ -1,5 +1,3 @@
-'use strict';
-
 const Benchmark = require('benchmark');
 const benchmarks = require('beautify-benchmark');
 const glicko2 = require('glicko2');
@@ -14,8 +12,6 @@ const suite = new Benchmark.Suite();
 //   2. Have player 1 win a match against player 2.
 //   3. Get the new rating, deviation, and volatility of both players.
 
-/* eslint-disable no-console, no-unused-vars */
-
 suite.add('glicko2-lite', () => {
   // 1. Create two players.
   const player1 = { rating: 1500, rd: 350, vol: 0.06 };
@@ -23,14 +19,14 @@ suite.add('glicko2-lite', () => {
 
   // 2. Have player 1 win a match against player 2.
   // 3. Get the new rating, deviation, and volatility of both players.
-  const new1 = lite(
+  const _new1 = lite(
     player1.rating,
     player1.rd,
     player1.vol,
     [[player2.rating, player2.rd, 1]],
     { tau: 0.5 }
   );
-  const new2 = lite(
+  const _new2 = lite(
     player2.rating,
     player2.rd,
     player2.vol,
@@ -49,15 +45,15 @@ suite.add('glicko2', () => {
   glicko.updateRatings([[player1, player2, 1]]);
 
   // 3. Get the new rating, deviation, and volatility of both players.
-  const new1 = {
+  const _new1 = {
     rating: player1.getRating(),
     rd: player1.getRd(),
-    vol: player1.getVol()
+    vol: player1.getVol(),
   };
-  const new2 = {
+  const _new2 = {
     rating: player2.getRating(),
     rd: player2.getRd(),
-    vol: player2.getVol()
+    vol: player2.getVol(),
   };
 });
 
@@ -71,15 +67,15 @@ suite.add('glicko2.ts', () => {
   glicko.updateRatings([[player1, player2, 1]]);
 
   // 3. Get the new rating, deviation, and volatility of both players.
-  const new1 = {
+  const _new1 = {
     rating: player1.getRating(),
     rd: player1.getRd(),
-    vol: player1.getVol()
+    vol: player1.getVol(),
   };
-  const new2 = {
+  const _new2 = {
     rating: player2.getRating(),
     rd: player2.getRd(),
-    vol: player2.getVol()
+    vol: player2.getVol(),
   };
 });
 
@@ -88,6 +84,7 @@ suite.on('cycle', (event) => {
 });
 
 suite.on('start', () => {
+  // biome-ignore lint/suspicious/noConsole: n/a
   console.log('Starting...');
 });
 

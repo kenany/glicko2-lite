@@ -2,10 +2,19 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/release-notes-generator",
-    "@semantic-release/changelog",
-    "@semantic-release/github",
-    "@semantic-release/npm",
-    "@semantic-release/git"
+    [
+      "@semantic-release/github",
+      {
+        "releasedLabels": false,
+        "successCommentCondition": "<% return issue.user.type !== 'Bot'; %>"
+      }
+    ],
+    "@containerbase/semantic-release-pnpm"
+  ],
+  "branches": [
+    {
+      "name": "master"
+    }
   ],
   "preset": "conventionalcommits",
   "tagFormat": "${version}"
