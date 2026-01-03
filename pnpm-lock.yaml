@@ -818,8 +818,8 @@ packages:
     resolution: {integrity: sha512-7MptL8U0cqcFdzIzwOTHoilX9x5BrNqye7Z/LuC7kCMRio1EMSyqRK3BEAUD7sXRq4iT4AzTVuZdhgQ2TCvYLg==}
     engines: {node: '>=8.6.0'}
 
-  fastq@1.19.1:
-    resolution: {integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==}
+  fastq@1.20.1:
+    resolution: {integrity: sha512-GGToxJ/w1x32s/D2EKND7kTil4n8OVk/9mycTc4VDza13lOvpUZTGX3mFSCtV9ksdGBVzvsyAVLM6mHFThxXxw==}
 
   fdir@6.5.0:
     resolution: {integrity: sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg==}
@@ -1498,8 +1498,8 @@ packages:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
 
-  normalize-url@8.1.0:
-    resolution: {integrity: sha512-X06Mfd/5aKsRHc0O0J5CUedwnPmnDtLF2+nq+KN9KSDlJHkPuh0JUviWjEWMe0SW/9TDdSLVPuk7L5gGTIA1/w==}
+  normalize-url@8.1.1:
+    resolution: {integrity: sha512-JYc0DPlpGWB40kH5g07gGTrYuMqV653k3uBKY6uITPWds3M0ov3GaWGp9lbE3Bzngx8+XkfzgvASb9vk9JDFXQ==}
     engines: {node: '>=14.16'}
 
   npm-run-path@4.0.1:
@@ -2485,7 +2485,7 @@ snapshots:
   '@nodelib/fs.walk@1.2.8':
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
-      fastq: 1.19.1
+      fastq: 1.20.1
 
   '@octokit/auth-token@6.0.0': {}
 
@@ -2633,7 +2633,7 @@ snapshots:
       fs-extra: 11.3.3
       lodash-es: 4.17.22
       nerf-dart: 1.0.0
-      normalize-url: 8.1.0
+      normalize-url: 8.1.1
       npm: 11.7.0
       rc: 1.2.8
       read-pkg: 10.0.0
@@ -3315,7 +3315,7 @@ snapshots:
       merge2: 1.4.1
       micromatch: 4.0.8
 
-  fastq@1.19.1:
+  fastq@1.20.1:
     dependencies:
       reusify: 1.1.0
 
@@ -3993,7 +3993,7 @@ snapshots:
 
   normalize-path@3.0.0: {}
 
-  normalize-url@8.1.0: {}
+  normalize-url@8.1.1: {}
 
   npm-run-path@4.0.1:
     dependencies:
