@@ -36,7 +36,7 @@
     "prepack": "pnpm build"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.2",
+    "@biomejs/biome": "2.4.3",
     "@containerbase/semantic-release-pnpm": "1.3.20",
     "@kenan/biome-config": "1.0.6",
     "@semantic-release/changelog": "6.0.3",
