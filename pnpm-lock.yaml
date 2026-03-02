@@ -12,8 +12,8 @@ importers:
         specifier: 2.4.4
         version: 2.4.4
       '@containerbase/semantic-release-pnpm':
-        specifier: 1.3.21
-        version: 1.3.21(semantic-release@25.0.3(typescript@5.9.3))
+        specifier: 1.3.22
+        version: 1.3.22(semantic-release@25.0.3(typescript@5.9.3))
       '@kenan/biome-config':
         specifier: 1.0.6
         version: 1.0.6(@biomejs/biome@2.4.4)
@@ -155,8 +155,8 @@ packages:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
 
-  '@containerbase/semantic-release-pnpm@1.3.21':
-    resolution: {integrity: sha512-NmRLN1yXJIBe2w6SN6ia6SHUnxvlFmwv3DiHbdWpWoi3eANIxgCtytVsvOHD8/7/q1PLputIm65NltQ0+0MsxA==}
+  '@containerbase/semantic-release-pnpm@1.3.22':
+    resolution: {integrity: sha512-Roe8PSw7BQPVVm1LC0yyERp23gzSsNgP2ZXMousrY6LFCdq9f0vpwdy4txjCN6f2C73eXJdjito2t8uzZlpv6Q==}
     engines: {node: ^22.11.0 || ^24}
     peerDependencies:
       semantic-release: ^24.0.0 || ^25.0.0
@@ -961,6 +961,7 @@ packages:
   git-raw-commits@2.0.11:
     resolution: {integrity: sha512-VnctFhw+xfj8Va1xtfEqCUD2XDrbAPSJx+hSrE5K7fGdjZruW7XV+QOrN7LF/RJyvspRiD2I0asWsxFp0ya26A==}
     engines: {node: '>=10'}
+    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
     hasBin: true
 
   git-remote-origin-url@2.0.0:
@@ -970,6 +971,7 @@ packages:
   git-semver-tags@4.1.1:
     resolution: {integrity: sha512-OWyMt5zBe7xFs8vglMmhM9lRQzCWL3WjHtxNNfJTMngGym7pC1kh8sP6jevfydJ6LP3ZvGxfb6ABYgPUM0mtsA==}
     engines: {node: '>=10'}
+    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
     hasBin: true
 
   gitconfiglocal@1.0.0:
@@ -2462,7 +2464,7 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@containerbase/semantic-release-pnpm@1.3.21(semantic-release@25.0.3(typescript@5.9.3))':
+  '@containerbase/semantic-release-pnpm@1.3.22(semantic-release@25.0.3(typescript@5.9.3))':
     dependencies:
       '@semantic-release/error': 4.0.0
       aggregate-error: 5.0.0
