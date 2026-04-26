@@ -38,7 +38,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@903f9c1a6ebcba6cf41d87230be49611ac97822e # v6.0.3
         with:
-          version: 10.33.1
+          version: 10.33.2
           run_install: false
 
       - name: Install Node.js
@@ -67,7 +67,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@903f9c1a6ebcba6cf41d87230be49611ac97822e # v6.0.3
         with:
-          version: 10.33.1
+          version: 10.33.2
           run_install: false
 
       - name: Install Node.js
@@ -99,7 +99,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@903f9c1a6ebcba6cf41d87230be49611ac97822e # v6.0.3
         with:
-          version: 10.33.1
+          version: 10.33.2
           run_install: false
 
       - name: Install Node.js
@@ -143,7 +143,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@903f9c1a6ebcba6cf41d87230be49611ac97822e # v6.0.3
         with:
-          version: 10.33.1
+          version: 10.33.2
           run_install: false
 
       - name: Setup Node.js
