@@ -1,4 +1,7 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["@kenan/biome-config"]
+  "extends": ["@kenan/biome-config"],
+  "files": {
+    "includes": ["src/**", "tests/**", "*.mts"]
+  }
 }
