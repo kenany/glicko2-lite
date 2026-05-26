@@ -1,10 +1,25 @@
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
+  "$schema": "https://www.schemastore.org/tsconfig",
   "compilerOptions": {
-    "allowJs": true,
-    "checkJs": true,
-    "declaration": true,
-    "emitDeclarationOnly": true
+    "lib": [
+      "es2024",
+      "ESNext.Array",
+      "ESNext.Collection",
+      "ESNext.Iterator",
+      "ESNext.Promise"
+    ],
+    "module": "nodenext",
+    "target": "es2024",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node16",
+
+    "paths": {
+      "glicko2-lite": ["./src/index.ts"]
+    }
   },
-  "include": ["*.js", "test/**/*.js"]
+  "include": ["src", "tests"],
+  "exclude": []
 }

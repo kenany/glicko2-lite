@@ -64,7 +64,7 @@ Starting...
 ## Example
 
 ``` javascript
-const glicko2 = require('glicko2-lite');
+import { glicko2 } from 'glicko2-lite';
 
 // player A: 1500 rating, 350 rating deviation, and 0.06 volatility
 // player B: 2000 rating, 70 rating deviation
@@ -87,7 +87,7 @@ $ npm install glicko2-lite
 ## API
 
 ``` javascript
-const glicko2 = require('glicko2-lite');
+import { glicko2 } from 'glicko2-lite';
 ```
 
 ### `glicko2(rating, rd, vol, matches, [options])`

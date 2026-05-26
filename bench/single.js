@@ -3,7 +3,7 @@ const benchmarks = require('beautify-benchmark');
 const glicko2 = require('glicko2');
 const glicko2ts = require('glicko2.ts');
 
-const lite = require('../');
+const { glicko2: lite } = require('../');
 
 const suite = new Benchmark.Suite();
 
