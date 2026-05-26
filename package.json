@@ -14,7 +14,7 @@
   "main": "index.js",
   "types": "index.d.ts",
   "engines": {
-    "node": "20 || 22 || >=24"
+    "node": "22 || 24 || >=26"
   },
   "files": [
     "index.d.ts",
