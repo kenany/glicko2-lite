@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.0",
-    "@containerbase/semantic-release-pnpm": "1.4.1",
+    "@containerbase/semantic-release-pnpm": "1.4.2",
     "@kenan/biome-config": "1.0.6",
     "beautify-benchmark": "0.2.4",
     "benchmark": "2.1.4",
