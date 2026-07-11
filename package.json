@@ -57,6 +57,6 @@
     "semantic-release": "25.0.5",
     "tsdown": "0.22.3",
     "typescript": "6.0.3",
-    "vitest": "4.1.9"
+    "vitest": "4.1.10"
   }
 }
