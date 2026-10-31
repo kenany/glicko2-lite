@@ -15,8 +15,8 @@ importers:
         specifier: 1.4.3
         version: 1.4.3(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))
       '@kenan/biome-config':
-        specifier: 1.0.6
-        version: 1.0.6(@biomejs/biome@2.6.3)
+        specifier: 1.2.0
+        version: 1.2.0(@biomejs/biome@2.6.3)
       beautify-benchmark:
         specifier: 0.2.4
         version: 0.2.4
@@ -163,10 +163,10 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@kenan/biome-config@1.0.6':
-    resolution: {integrity: sha512-cTfVydG24brCCwwP2bv6C8CzoEnGBZjdOVXKCTd4yNbXc978DX52NEuywjuLO9jFjwvVovC1LCnnXdkAkQjAdw==}
+  '@kenan/biome-config@1.2.0':
+    resolution: {integrity: sha512-1GIwUpzZOgIRGdI5DCgSEKdTYuSTXAhCBADbu4W8+u73GXFtyHVYnKeFwk9EsYz/hH1qmwjp7+bmHirOXB8a4g==}
     peerDependencies:
-      '@biomejs/biome': ^2.3.0
+      '@biomejs/biome': ^2.6.3
 
   '@octokit/auth-token@6.0.0':
     resolution: {integrity: sha512-P4YJBPdPSpWTQ1NU4XYdvHvXJJDxM6YwpS0FZHRgP7YFkdVxsWcpWGy/NVqlAA7PcPCnMacXlRm1y2PFZRWL/w==}
@@ -2566,7 +2566,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.6.0
 
-  '@kenan/biome-config@1.0.6(@biomejs/biome@2.6.3)':
+  '@kenan/biome-config@1.2.0(@biomejs/biome@2.6.3)':
     dependencies:
       '@biomejs/biome': 2.6.3
 
