@@ -12,8 +12,8 @@ importers:
         specifier: 2.6.4
         version: 2.6.4
       '@containerbase/semantic-release-pnpm':
-        specifier: 1.4.3
-        version: 1.4.3(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))
+        specifier: 1.4.4
+        version: 1.4.4(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))
       '@kenan/biome-config':
         specifier: 1.0.6
         version: 1.0.6(@biomejs/biome@2.6.4)
@@ -143,8 +143,8 @@ packages:
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
     engines: {node: '>=0.1.90'}
 
-  '@containerbase/semantic-release-pnpm@1.4.3':
-    resolution: {integrity: sha512-dOMyBw+mzcKHt6OqYyRj6arFeszoINlNRq1eIR7oEE0TB0i0lhj8BsJ/2IFISJUPwf9lUxKbV8ES6vjqqMIQYg==}
+  '@containerbase/semantic-release-pnpm@1.4.4':
+    resolution: {integrity: sha512-Jpph9T1Kjy7GdfeqAYETkmGr5MKg82rg2FMoQ5JQ7y65Rv8RQmmaVIQtOPoxwwEykugV9Axzvj0V9hU2f0hwfw==}
     engines: {node: ^22.11.0 || ^24}
     peerDependencies:
       semantic-release: ^24.0.0 || ^25.0.0
@@ -2546,11 +2546,12 @@ snapshots:
   '@colors/colors@1.5.0':
     optional: true
 
-  '@containerbase/semantic-release-pnpm@1.4.3(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))':
+  '@containerbase/semantic-release-pnpm@1.4.4(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))':
     dependencies:
       '@semantic-release/error': 4.0.0
       aggregate-error: 5.1.0
       execa: 9.6.1
+      read-pkg: 10.1.0
       semantic-release: 25.0.9(supports-color@7.2.0)(typescript@7.0.2)
       semver: 7.8.5
 
